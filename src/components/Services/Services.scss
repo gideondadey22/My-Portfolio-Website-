@@ -1,0 +1,132 @@
+.serviceContainer {
+  padding: 5rem 2rem;
+  background: #0f172a;
+  text-align: center;
+
+  .headText {
+    font-size: clamp(1.8rem, 1.5vw, 2.0rem);
+    font-weight: 500;
+    margin-bottom: 3rem;
+    color: #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 1rem;
+    padding: 2rem;
+    color: #e2e8f0;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 1rem 0;
+      color: #cbd5e1;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+
+    .lanIcn {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+
+      &.react {
+        color: #61dafb;
+      }
+
+      &.node {
+        color: #8cc84b;
+      }
+
+      &.devops {
+        color: #f97316; // orange
+      }
+
+      &.design {
+        color: #f472b6; // pink
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .serviceContainer {
+    padding: 3rem 1rem;
+
+    .content {
+      gap: 1.5rem;
+    }
+
+    .card {
+      text-align: center;
+
+      .lanIcn {
+        margin: 0 auto 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .serviceContainer {
+    padding: 2rem 1rem;
+
+    .headText {
+      font-size: 1.8rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      .lanIcn {
+        width: 60px;
+        height: 60px;
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

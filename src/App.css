@@ -1,0 +1,118 @@
+/* Central Hero Section */
+.central {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh; /* reduce from 100vh */
+  padding: 1.5rem;
+  gap: 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glowing shapes */
+.central::before {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.4), transparent);
+  top: -30px;
+  left: -30px;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.central::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent);
+  bottom: -30px;
+  right: -30px;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* Central Text */
+.central-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px; /* reduce width to fit smaller screens */
+  padding: 0 1rem;
+}
+
+/* Headings */
+.central-text h3 {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+
+.central-text h1 {
+  font-size: clamp(2rem, 5vw, 3rem); /* smaller max */
+  font-weight: 900;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #9333ea, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Role & Bio */
+.central-text p.role,
+.central-text p.bio {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  opacity: 0.9;
+  margin-top: 0.8rem;
+  color: #cbd5e1;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Buttons container */
+.cta-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .central {
+    min-height: 80vh;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .central-text h1 { font-size: 2.2rem; }
+  .central-text p.role,
+  .central-text p.bio { font-size: 1rem; }
+}
+
+@media screen and (max-width: 425px) {
+  .central {
+    min-height: 75vh;
+    padding: 0.8rem;
+  }
+
+  .central-text h1 { font-size: 1.8rem; }
+  .central-text p.role,
+  .central-text p.bio { font-size: 0.95rem; }
+
+  .cta-container {
+    gap: 0.5rem;
+  }
+
+  .cta-container .cta {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

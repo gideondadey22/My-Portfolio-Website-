@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@500;700&display=swap');
+
+.footContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: black; 
+  padding: 60px 20px 30px;
+  gap: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Social Icons */
+.ftIcns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 1.8rem;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.3s ease, transform 0.3s ease;
+
+  svg {
+    cursor: pointer;
+  }
+
+  svg:hover {
+    color: #a5b4fc; /* soft indigo */
+    transform: translateY(-4px) scale(1.1);
+  }
+}
+
+/* Contact Section */
+.ftContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #f1f5f9;
+  text-align: center;
+
+  h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    letter-spacing: 1px;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  p:hover {
+    color: rgba(165, 180, 252, 0.9);
+  }
+}
+
+/* Footer Bottom */
+.ftBtm {
+  text-align: center;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.5px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 🔹 Responsive Tweaks */
+@media screen and (max-width: 768px) {
+  .footContainer {
+    padding: 50px 15px 25px;
+    gap: 40px;
+  }
+
+  .ftIcns {
+    font-size: 1.6rem;
+    gap: 16px;
+  }
+
+  .ftContact h2 {
+    font-size: 1.5rem;
+  }
+
+  .ftContact p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footContainer {
+    gap: 30px;
+  }
+
+  .ftIcns {
+    font-size: 1.4rem;
+    gap: 12px;
+  }
+
+  .ftContact h2 {
+    font-size: 1.3rem;
+  }
+
+  .ftContact p {
+    font-size: 0.95rem;
+  }
+}
