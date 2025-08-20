@@ -10,23 +10,12 @@
   top: 0;
   width: 100%;
   min-height: clamp(60px, 10vh, 80px);
-  background: linear-gradient(270deg, #0f172a, #1e3a8a, #3b82f6, #0f172a);
-  background-size: 600% 600%;
-  animation: gradientMove 15s ease infinite;
+  background: rgba(15,23,42,0.95);
   backdrop-filter: blur(4px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   z-index: 1000;
   transform: translateZ(0);
   will-change: transform, opacity;
-}
-
-/* Gradient Animation */
-@keyframes gradientMove {
-  0% { background-position: 0% 0%; }
-  25% { background-position: 100% 0%; }
-  50% { background-position: 100% 100%; }
-  75% { background-position: 0% 100%; }
-  100% { background-position: 0% 0%; }
 }
 
 /* Logo */
@@ -40,7 +29,9 @@
   color: #fff;
   cursor: pointer;
 
-  svg { font-size: 1.8rem; }
+  svg {
+    font-size: 1.8rem;
+  }
 }
 
 /* Desktop Links */
@@ -126,13 +117,28 @@
 
 /* ================= MOBILE ADJUSTMENTS ================= */
 @media(max-width: 768px){
-  .headContainer { padding: 0 1rem; min-height: 60px; flex-wrap: wrap; }
+  .headContainer {
+    padding: 0 1rem;
+    min-height: 60px;
+    flex-wrap: wrap;
+  }
 
-  .logo { font-size: 1rem; gap: 4px; svg { font-size: 1.5rem; } }
+  .logo {
+    font-size: 1rem;
+    gap: 4px;
+
+    svg { font-size: 1.5rem; }
+  }
 
   .hamMenu span { width: 22px; height: 2.5px; }
 
-  .mobileMenu { width: 80vw; max-width: 280px; padding: 3rem 1.5rem; gap: 1.5rem; font-size: 1.1rem; }
+  .mobileMenu {
+    width: 80vw;
+    max-width: 280px;
+    padding: 3rem 1.5rem;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+  }
 
   .mobileMenu li { font-size: 1.1rem; line-height: 1.6; }
 }
@@ -147,4 +153,6 @@
 }
 
 /* Prevent content hidden under navbar */
-body, main, section { padding-top: clamp(60px, 10vh, 80px); }
+body, main, section {
+  padding-top: clamp(60px, 10vh, 80px);
+}
