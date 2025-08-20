@@ -1,16 +1,28 @@
-/* Central Hero Section */
+/* ================= CENTRAL HERO SECTION ================= */
 .central {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 85vh; /* reduce from 100vh */
+  min-height: 85vh;
   padding: 1.5rem;
   gap: 1.5rem;
   text-align: center;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(270deg, #0f172a, #1e293b, #1e40af, #0f172a);
+  background-size: 600% 600%;
+  animation: centralGradientMove 20s ease infinite;
   position: relative;
   overflow: hidden;
+  z-index: 0;
+}
+
+/* Gradient Animation */
+@keyframes centralGradientMove {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Glowing shapes */
@@ -42,7 +54,7 @@
 .central-text {
   position: relative;
   z-index: 1;
-  max-width: 600px; /* reduce width to fit smaller screens */
+  max-width: 600px;
   padding: 0 1rem;
 }
 
@@ -55,7 +67,7 @@
 }
 
 .central-text h1 {
-  font-size: clamp(2rem, 5vw, 3rem); /* smaller max */
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 900;
   line-height: 1.1;
   background: linear-gradient(90deg, #9333ea, #3b82f6);
@@ -84,7 +96,7 @@
   flex-wrap: wrap;
 }
 
-/* Responsive adjustments */
+/* ================= RESPONSIVE ================= */
 @media screen and (max-width: 768px) {
   .central {
     min-height: 80vh;

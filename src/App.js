@@ -16,7 +16,7 @@ export default function App() {
           <BackgroundAnimation />
         </div>
         <div className="central-text">
-          <h3>HELLO! I'M</h3>
+          <h3>HELLO I'M</h3>
           <h1>GIDEON DADEY</h1>
           <p>Software Developer</p>
         </div>

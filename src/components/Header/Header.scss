@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@500;700&display=swap');
+
+/* ================= HEADER ================= */
 .headContainer {
   display: flex;
   justify-content: space-between;
@@ -8,12 +10,23 @@
   top: 0;
   width: 100%;
   min-height: clamp(60px, 10vh, 80px);
-  background: rgba(15,23,42,0.95);
+  background: linear-gradient(270deg, #0f172a, #1e3a8a, #3b82f6, #0f172a);
+  background-size: 600% 600%;
+  animation: gradientMove 15s ease infinite;
   backdrop-filter: blur(4px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   z-index: 1000;
   transform: translateZ(0);
   will-change: transform, opacity;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
 /* Logo */
@@ -27,9 +40,7 @@
   color: #fff;
   cursor: pointer;
 
-  svg {
-    font-size: 1.8rem;
-  }
+  svg { font-size: 1.8rem; }
 }
 
 /* Desktop Links */
@@ -51,7 +62,7 @@
   @media(max-width: 768px){ display: none; }
 }
 
-/* Socials */
+/* Social Icons */
 .socials {
   display: flex;
   align-items: center;
@@ -63,7 +74,7 @@
   @media(max-width: 768px){ display: none; }
 }
 
-/* Hamburger */
+/* Hamburger Menu */
 .hamMenu {
   display: none;
   flex-direction: column;
@@ -113,12 +124,27 @@
   &.active { transform: translateX(0); }
 }
 
-/* MOBILE ADJUSTMENTS */
-@media(max-width:425px){
-  .headContainer{ padding: 0 1rem; }
-  .mobileMenu{ width:80vw; padding:3rem 1.5rem; }
-  .mobileMenu li{ font-size:1.1rem; }
-  .logo{ font-size:1rem; gap:4px; }
-  .hamMenu span{ width:22px; height:2.5px; }
+/* ================= MOBILE ADJUSTMENTS ================= */
+@media(max-width: 768px){
+  .headContainer { padding: 0 1rem; min-height: 60px; flex-wrap: wrap; }
+
+  .logo { font-size: 1rem; gap: 4px; svg { font-size: 1.5rem; } }
+
+  .hamMenu span { width: 22px; height: 2.5px; }
+
+  .mobileMenu { width: 80vw; max-width: 280px; padding: 3rem 1.5rem; gap: 1.5rem; font-size: 1.1rem; }
+
+  .mobileMenu li { font-size: 1.1rem; line-height: 1.6; }
 }
 
+/* Extra Small Phones */
+@media(max-width: 375px){
+  .headContainer { padding: 0 0.8rem; min-height: 55px; }
+  .logo { font-size: 0.95rem; gap: 3px; }
+  .hamMenu span { width: 20px; height: 2px; }
+  .mobileMenu { width: 85vw; padding: 2.5rem 1rem; font-size: 1rem; }
+  .mobileMenu li { font-size: 1rem; }
+}
+
+/* Prevent content hidden under navbar */
+body, main, section { padding-top: clamp(60px, 10vh, 80px); }
