@@ -4,12 +4,13 @@
   text-align: center;
 
   .headText {
-    font-size: clamp(1.8rem, 1.5vw, 2.0rem);
+    font-size: clamp(1.5rem, 1.5vw, 1.5rem);
     font-weight: 500;
     margin-bottom: 3rem;
     color: #e2e8f0;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-family: "Roboto Mono", monospace;
   }
 
   .content {

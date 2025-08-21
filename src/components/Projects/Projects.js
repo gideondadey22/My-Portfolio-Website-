@@ -4,7 +4,7 @@ import blgImg from "../images/blg.PNG";
 import SocImg from "../images/socio-img.PNG";
 import ishopImg from "../images/ishop-bg.PNG";
 import shopinImg from "../images/kada.png";
-import buidImg from "../images/buidly-bg.PNG";
+import buidImg from "../images/buidly-bg.jpg";
 import paradigImg from "../images/Paradigma-bg.jpg";
 
 const Projects = () => {
@@ -63,8 +63,8 @@ const Projects = () => {
             </div>
             <div className="right">
               <h4>ILLUSTRATION</h4>
-              <h2>Dash Settings</h2>
-              <p>Dash UI Settings page. Stack: ReactJs, Material-UI, React-Router-DOM, SCSS, React Animation</p>
+              <h2>STEPuHP System</h2>
+              <p>Student Mentoring System designed to connect mentees to their mentors login page. Stack: ReactJs, Material-UI, React-Router-DOM, NextJs, ExpressJs</p>
               <div className="prjButton">
               <div className="link" onClick={() => window.location = 'https://modern-admin-dashboard-two.vercel.app/'}>View Project</div>
               <div className="link" onClick={() => window.location = ''}>View Code</div>

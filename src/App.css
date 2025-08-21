@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 85vh; /* reduce from 100vh */
+  min-height: 85vh; 
   padding: 1.5rem;
   gap: 1.5rem;
   text-align: center;
@@ -42,7 +42,7 @@
 .central-text {
   position: relative;
   z-index: 1;
-  max-width: 600px; /* reduce width to fit smaller screens */
+  max-width: 600px; 
   padding: 0 1rem;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .central-text h1 {
-  font-size: clamp(2rem, 5vw, 3rem); /* smaller max */
+  font-size: clamp(2rem, 5vw, 3rem); 
   font-weight: 900;
   line-height: 1.1;
   background: linear-gradient(90deg, #9333ea, #3b82f6);
@@ -70,7 +70,7 @@
   font-size: clamp(0.9rem, 2vw, 1.2rem);
   opacity: 0.9;
   margin-top: 0.8rem;
-  color: #cbd5e1;
+  color: #e1d7cb;
   font-style: italic;
   line-height: 1.5;
 }

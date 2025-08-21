@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Services.scss";
 import { DiReact, DiNodejsSmall } from "react-icons/di";
-import { FaServer, FaPalette } from "react-icons/fa"; // new icons
+import { FaServer, FaPalette } from "react-icons/fa";
 
 const Services = () => {
+  useEffect(() => {
+    const cards = document.querySelectorAll(".serviceContainer .card");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            cards.forEach((card, index) => {
+              card.style.setProperty("--delay", `${index * 0.15}s`);
+              card.classList.add("visible");
+            });
+            observer.disconnect(); // animate only once
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  }, []);
+
   return (
     <section id="tech" className="serviceContainer">
       <h2 className="headText">What I Do</h2>
@@ -17,8 +38,10 @@ const Services = () => {
           <h3>Frontend Development</h3>
           <p>
             Crafting seamless, scalable, and accessible UIs using{" "}
-            <strong>React.js, TypeScript, HTML5, CSS3, TailwindCSS, and
-            Material-UI</strong>.
+            <strong>
+              React.js, TypeScript, HTML5, CSS3, TailwindCSS, and Material-UI
+            </strong>
+            .
           </p>
         </div>
 
